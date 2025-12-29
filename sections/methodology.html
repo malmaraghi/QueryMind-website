@@ -1,0 +1,89 @@
+<div class="methodology-grid" id="methodology-grid">
+    <!-- System Architecture -->
+    <div class="methodology-section" data-index="0">
+        <h3>System Architecture</h3>
+        <div class="architecture-diagram">
+            <div class="arch-layer">
+                <div class="arch-box">User Interface (Flask Web App)</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-layer">
+                <div class="arch-box small">Input Validator</div>
+                <div class="arch-box small">RAG Retrieval</div>
+                <div class="arch-box small">SQL Validator</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-layer">
+                <div class="arch-box small">ChromaDB</div>
+                <div class="arch-box small">Ollama LLM</div>
+                <div class="arch-box small">MariaDB</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools & Frameworks -->
+    <div class="methodology-section" data-index="1">
+        <h3>Tools & Frameworks</h3>
+        <div class="tech-grid">
+            <div class="tech-item">
+                <div class="tech-label">Backend</div>
+                <div class="tech-value"><a href="https://www.python.org/downloads/release/python-380/" target="_blank" class="tech-link">Flask (Python 3.8+)</a></div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-label">LLM Engine</div>
+                <div class="tech-value"><a href="https://ollama.com/library/llama3.1:8b" target="_blank" class="tech-link">Ollama (Llama 3.1:8b)</a></div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-label">Vector Database</div>
+                <div class="tech-value">ChromaDB</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-label">Embeddings</div>
+                <div class="tech-value"><a href="https://ollama.com/library/mxbai-embed-large" target="_blank" class="tech-link">mxbai-embed-large</a></div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-label">Database</div>
+                <div class="tech-value"><a href="https://www.mysql.com/" target="_blank" class="tech-link">MySQL / MariaDB</a></div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-label">Frontend</div>
+                <div class="tech-value"><a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank" class="tech-link">HTML5, CSS3, JavaScript</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Development Approach -->
+    <div class="methodology-section" data-index="2">
+        <h3>Development Approach</h3>
+        <ul class="approach-list">
+            <li>Schema-aware RAG pipeline design with SELECT-only validation</li>
+            <li>Comparative evaluation of 5 LLM configurations (different models and embeddings)</li>
+            <li>Iterative testing on benchmark queries for accuracy assessment</li>
+            <li>Security-first implementation with input validation and SQL injection prevention</li>
+            <li>100% local deployment architecture to ensure data privacy</li>
+        </ul>
+    </div>
+
+    <!-- Dataset & Hardware -->
+    <div class="methodology-section" data-index="3">
+        <h3>Dataset & Hardware</h3>
+        <div class="dataset-info">
+            <div class="info-row">
+                <strong>Test Database:</strong>
+                <span>E-commerce database with customer, order, and product tables</span>
+            </div>
+            <div class="info-row">
+                <strong>Benchmark Queries:</strong>
+                <span>5 standard queries covering aggregations, joins, and filtering</span>
+            </div>
+            <div class="info-row">
+                <strong>Model Configurations:</strong>
+                <span>5 combinations tested (Llama 3.1:8b, Qwen3:1.7b, Gemma3:1b with different embeddings)</span>
+            </div>
+            <div class="info-row">
+                <strong>Deployment:</strong>
+                <span>On-premise local machine (CPU-based inference)</span>
+            </div>
+        </div>
+    </div>
+</div>

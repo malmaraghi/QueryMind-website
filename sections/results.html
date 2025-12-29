@@ -1,0 +1,132 @@
+<!-- Accuracy vs Time Graph -->
+<div class="graph-container" id="graph-container">
+    <h3 class="graph-title">Accuracy vs. Generation Time</h3>
+    <div class="graph-wrapper">
+        <div class="graph-y-axis">
+            <span>100%</span>
+            <span>80%</span>
+            <span>60%</span>
+            <span>40%</span>
+            <span>20%</span>
+            <span>0%</span>
+        </div>
+        <div class="graph-content">
+            <div class="graph-grid"></div>
+            <div class="graph-points">
+                <!-- Point 1: Llama 3.1:8b - 100% accuracy, 28.97s -->
+                <div class="graph-point" style="left: 88%; bottom: 100%;" data-label="Llama 3.1:8b" data-accuracy="100%" data-time="28.97s">
+                    <div class="point-dot best"></div>
+                    <div class="point-label">Llama 3.1:8b (mxbai)<br>100% / 28.97s</div>
+                </div>
+                
+                <!-- Point 2: Qwen3:1.7b + mxbai - 60% accuracy, 6.69s -->
+                <div class="graph-point" style="left: 23%; bottom: 60%;" data-label="Qwen3:1.7b (mxbai)" data-accuracy="60%" data-time="6.69s">
+                    <div class="point-dot good"></div>
+                    <div class="point-label">Qwen3:1.7b (mxbai)<br>60% / 6.69s</div>
+                </div>
+                
+                <!-- Point 3: Gemma3:1b + mxbai - 60% accuracy, 5.19s -->
+                <div class="graph-point" style="left: 18%; bottom: 60%;" data-label="Gemma3:1b (mxbai)" data-accuracy="60%" data-time="5.19s">
+                    <div class="point-dot good"></div>
+                    <div class="point-label">Gemma3:1b (mxbai)<br>60% / 5.19s</div>
+                </div>
+                
+                <!-- Point 4: Qwen3:1.7b + minilm - 60% accuracy, 4.52s -->
+                <div class="graph-point" style="left: 15.5%; bottom: 60%;" data-label="Qwen3:1.7b (minilm)" data-accuracy="60%" data-time="4.52s">
+                    <div class="point-dot good"></div>
+                    <div class="point-label">Qwen3:1.7b (minilm)<br>60% / 4.52s</div>
+                </div>
+                
+                <!-- Point 5: Gemma3:1b + minilm - 40% accuracy, 4.20s -->
+                <div class="graph-point" style="left: 14.5%; bottom: 40%;" data-label="Gemma3:1b (minilm)" data-accuracy="40%" data-time="4.20s">
+                    <div class="point-dot moderate"></div>
+                    <div class="point-label">Gemma3:1b (minilm)<br>40% / 4.20s</div>
+                </div>
+            </div>
+            <div class="graph-x-axis">
+                <span>0s</span>
+                <span>10s</span>
+                <span>20s</span>
+                <span>30s</span>
+            </div>
+        </div>
+    </div>
+    <p class="graph-caption">Trade-off between accuracy and generation time across different model configurations</p>
+</div>
+
+<script>
+// Make graph points interactive on mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const graphPoints = document.querySelectorAll('.graph-point');
+    
+    graphPoints.forEach(point => {
+        point.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Close all other labels
+            graphPoints.forEach(p => {
+                if (p !== point) {
+                    p.classList.remove('active');
+                }
+            });
+            
+            // Toggle current label
+            this.classList.toggle('active');
+        });
+    });
+    
+    // Close labels when clicking outside
+    document.addEventListener('click', function() {
+        graphPoints.forEach(p => p.classList.remove('active'));
+    });
+});
+</script>
+
+<div class="results-table-wrapper" id="results-table" data-index="0">
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th>Model Configuration</th>
+                <th>Accuracy</th>
+                <th>Avg Generation Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Llama 3.1:8b + mxbai-embed-large</strong></td>
+                <td><span class="accuracy-badge best">100%</span></td>
+                <td>28.97s</td>
+            </tr>
+            <tr>
+                <td>Qwen3:1.7b + mxbai-embed-large</td>
+                <td><span class="accuracy-badge good">60%</span></td>
+                <td>6.69s</td>
+            </tr>
+            <tr>
+                <td>Gemma3:1b + mxbai-embed-large</td>
+                <td><span class="accuracy-badge good">60%</span></td>
+                <td>5.19s</td>
+            </tr>
+            <tr>
+                <td>Qwen3:1.7b + all-minilm</td>
+                <td><span class="accuracy-badge good">60%</span></td>
+                <td>4.52s</td>
+            </tr>
+            <tr>
+                <td>Gemma3:1b + all-minilm</td>
+                <td><span class="accuracy-badge moderate">40%</span></td>
+                <td>4.20s</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="results-findings" id="results-findings" data-index="1">
+    <h3>Key Findings</h3>
+    <ul>
+        <li><strong>Larger models</strong> achieve higher accuracy but require more generation time</li>
+        <li><strong>Smaller models</strong> are faster but less accurate for complex queries</li>
+        <li><strong>Embedding model quality</strong> impacts retrieval accuracy significantly</li>
+        <li>All configurations pass security validation tests</li>
+    </ul>
+</div>
+

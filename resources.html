@@ -3,53 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources - QueryMind</title>
+    <title>QueryMind - Resources</title>
     <meta name="description" content="Access QueryMind resources including full report, poster, demo video, abstract, and source code">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23bb23fe' rx='20'/><text x='50' y='72' font-size='65' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial, sans-serif'>Q</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-box-link">
-            <div class="nav-box">
-                <h1 class="nav-title">QueryMind</h1>
+<body class="resources-page">
+    <!-- Academic Header -->
+    <section class="academic-header">
+        <div class="container">
+            <div class="academic-header-content">
+                <img src="images/UOB_logo.jpg" alt="University of Bahrain Logo" class="uob-logo">
+                <div class="academic-info">
+                    <h3 class="university-name">University of Bahrain</h3>
+                    <p class="college-name">College of Information Technology</p>
+                    <p class="department-name">Department of Cybersecurity</p>
+                </div>
             </div>
-        </a>
-        <div class="navbar-right">
-            <a href="mailto:info@querymind-text2sql.com" class="nav-link">Get in Touch</a>
         </div>
-    </nav>
+    </section>
 
     <!-- Resources Header -->
     <section class="resources-hero">
         <div class="container">
-            <a href="index.html" class="back-button back-button-desktop">
-                <span class="back-arrow">←</span> Back
-            </a>
             <h1 class="resources-title">Project Resources</h1>
-            <p class="resources-description">
-                Access all QueryMind project materials including documentation, demonstrations, and source code.
-            </p>
         </div>
     </section>
-
-    <!-- Floating Back Button for Mobile -->
-    <a href="index.html" class="back-button back-button-mobile">
-        <span class="back-arrow">←</span>
-    </a>
 
     <!-- Resources Grid -->
     <section class="section resources-section">
         <div class="container">
+            <a href="index.html" class="back-button-resources">
+                <span class="back-arrow">←</span> Back to Home
+            </a>
             <div class="resources-grid">
                 
                 <!-- Full Report -->
                 <div class="resource-card" id="report">
                     <h3 class="resource-title">Full Project Report</h3>
-                    <p class="resource-description">
-                        Comprehensive documentation covering problem statement, methodology, implementation, 
-                        experimental results, and conclusions.
-                    </p>
+                    <p class="resource-description">Complete documentation: methodology, implementation, and results.</p>
                     <a href="https://drive.google.com/file/d/1ng_RuWAV661o0JxJE2x5vGtIlHZuM9De/view?usp=drive_link" 
                        target="_blank" 
                        class="resource-btn-link">
@@ -60,9 +52,7 @@
                 <!-- GitHub Repository -->
                 <div class="resource-card" id="github">
                     <h3 class="resource-title">GitHub Repository</h3>
-                    <p class="resource-description">
-                        Complete source code with installation instructions and development documentation.
-                    </p>
+                    <p class="resource-description">Source code with installation and deployment guides.</p>
                     <a href="https://github.com/malmaraghi/QueryMind" 
                        target="_blank" 
                        class="resource-btn-link">
@@ -73,9 +63,7 @@
                 <!-- Project Poster -->
                 <div class="resource-card" id="poster">
                     <h3 class="resource-title">Project Poster</h3>
-                    <p class="resource-description">
-                        Visual summary of QueryMind's architecture, features, and key results.
-                    </p>
+                    <p class="resource-description">Visual summary of architecture and key findings.</p>
                     <a href="https://drive.google.com/file/d/1Yd0RVe4pQ2egK7pHV-ts-VlZk8Ss2xUr/view?usp=sharing" 
                        target="_blank" 
                        class="resource-btn-link">
@@ -86,13 +74,33 @@
                 <!-- Demo Video -->
                 <div class="resource-card" id="demo">
                     <h3 class="resource-title">Demo Video</h3>
-                    <p class="resource-description">
-                        Complete walkthrough demonstrating QueryMind features and real-world query examples.
-                    </p>
+                    <p class="resource-description">Live demonstration of features and query examples.</p>
                     <a href="https://drive.google.com/file/d/1P1yun3DS4n5BoiAbfR6Dis9DOnm5SHRc/view?usp=drive_link" 
                        target="_blank" 
                        class="resource-btn-link">
                         Watch Demo →
+                    </a>
+                </div>
+
+                <!-- Ollama -->
+                <div class="resource-card" id="ollama">
+                    <h3 class="resource-title">Ollama (LLM Runtime)</h3>
+                    <p class="resource-description">Local LLM deployment platform for privacy-first AI.</p>
+                    <a href="https://ollama.com/" 
+                       target="_blank" 
+                       class="resource-btn-link">
+                        Visit Ollama →
+                    </a>
+                </div>
+
+                <!-- MySQL -->
+                <div class="resource-card" id="mysql">
+                    <h3 class="resource-title">MySQL Database</h3>
+                    <p class="resource-description">Open-source relational database management system.</p>
+                    <a href="https://www.mysql.com/" 
+                       target="_blank" 
+                       class="resource-btn-link">
+                        Visit MySQL →
                     </a>
                 </div>
 
@@ -111,13 +119,15 @@
                     <a href="#github">GitHub</a>
                     <a href="#poster">Poster</a>
                     <a href="#demo">Demo Video</a>
+                    <a href="#ollama">Ollama</a>
+                    <a href="#mysql">MySQL</a>
                 </div>
                 <div class="footer-contact">
                     <a href="mailto:info@querymind-text2sql.com">info@querymind-text2sql.com</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 QueryMind - <a href="https://www.uob.edu.bh/" target="_blank" class="uob-link">University of Bahrain</a> Senior Project</p>
+                <p>&copy; 2025 QueryMind | Final Year Project - Semester 1 (2025/2026) | <a href="https://www.uob.edu.bh/" target="_blank" class="uob-link">College of IT, University of Bahrain</a></p>
             </div>
         </div>
     </footer>

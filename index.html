@@ -5,49 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QueryMind - Intelligent Database Querying Through Natural Language</title>
     <meta name="description" content="QueryMind: A secure, on-premise text-to-SQL system that converts natural language questions into SQL queries using RAG and local LLMs.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23bb23fe' rx='20'/><text x='50' y='72' font-size='65' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial, sans-serif'>Q</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <!-- Welcome Modal -->
-    <div id="welcomeModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-icon">💡</div>
-            <h2 class="modal-title">Did You Know?</h2>
-            <p class="modal-text">
-                <strong>83% of business decisions</strong> are delayed because non-technical executives 
-                wait hours or days for IT teams to extract simple database insights. 
-                <span class="modal-highlight">QueryMind changes that.</span>
-            </p>
-            <button class="modal-btn" onclick="closeModal()">Continue to QueryMind →</button>
-        </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-box-link">
-            <div class="nav-box">
-                <h1 class="nav-title">QueryMind</h1>
+    <!-- Academic Header -->
+    <section class="academic-header">
+        <div class="container">
+            <div class="academic-header-content">
+                <img src="images/UOB_logo.jpg" alt="University of Bahrain Logo" class="uob-logo">
+                <div class="academic-info">
+                    <h3 class="university-name">University of Bahrain</h3>
+                    <p class="college-name">College of Information Technology</p>
+                    <p class="department-name">Department of Cybersecurity</p>
+                </div>
             </div>
-        </a>
-        <div class="navbar-right">
-            <a href="mailto:info@querymind-text2sql.com" class="nav-link">Get in Touch</a>
         </div>
-    </nav>
+    </section>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero-section">
         <div class="hero-content">
-            <h2 class="hero-title">QueryMind</h2>
-            <p class="hero-subtitle">Transform Natural Language into SQL Queries</p>
-            <p class="hero-description">
-                A secure, on-premise text-to-SQL system that converts natural language questions 
-                into SQL queries using RAG (Retrieval-Augmented Generation) and local LLMs.
-            </p>
-            <div class="hero-buttons">
+            <h2 class="hero-title" id="hero-title">QueryMind: Intelligent Text-to-SQL Conversion Using RAG-Enhanced LLMs and Comparative Model Evaluation</h2>
+            <p class="hero-subtitle" id="hero-subtitle">Bridging Natural Language and Databases with Privacy-First AI</p>
+            <div class="hero-buttons" id="hero-buttons">
                 <a href="resources" class="btn-primary">View Resources</a>
-                <a href="#features" class="btn-secondary">Learn More</a>
+                <a href="#objectives" class="btn-secondary">Learn More</a>
             </div>
         </div>
     </section>
@@ -56,28 +41,15 @@
     <section class="section abstract-section">
         <div class="container">
             <h2 class="section-title">Abstract</h2>
-            <div class="abstract-content">
-                <p>
-                    Businesses require natural-language access to databases without exposing records to large language models, 
-                    as this compromises data confidentiality and conflicts with governance mandates. This research paper introduces 
-                    QueryMind, a system that resolves this issue by transforming natural-language enquiries into 
-                    secure SQL through a schema-aware Retrieval-Augmented Generation (RAG) pipeline featuring SELECT-only validation.
-                </p>
-                <p>
-                    We tested the system on an e-commerce database with five different model configurations. The best setup, 
-                    llama3.1-8b with mxbai-embed-large, achieved 100% accuracy 
-                    across all benchmark queries. The entire pipeline averaged 33 seconds per query, with 86% of that time dedicated 
-                    to LLM generation. The smaller models gave answers faster, in an average of 4 to 7 seconds, but they were only 
-                    40 to 60 percent accurate.
-                </p>
-                <p>
-                    Security tests in five different situations indicated that the system could withstand SQL injection, 
-                    XSS, and session-hijacking attacks. The performance of local and remote databases 
-                    was almost the same, with only a 7% difference in total processing times. The results show that bigger LLMs take 
-                    longer to process, but they make SQL generation more accurate and safer. They also show that a fully local, 
-                    schema-restricted setup is reliable and keeps data private.
-                </p>
-            </div>
+            <div id="abstract-content"></div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="section objectives-section" id="objectives">
+        <div class="container">
+            <h2 class="section-title">Objectives</h2>
+            <div id="objectives-content"></div>
         </div>
     </section>
 
@@ -85,20 +57,7 @@
     <section class="section problem-section">
         <div class="container">
             <h2 class="section-title">The Problem</h2>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <h3>SQL Complexity</h3>
-                    <p>Traditional database querying requires deep knowledge of SQL syntax, schema structure, and table relationships.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>Accessibility Barrier</h3>
-                    <p>Non-technical business users and executives struggle to extract data insights without technical support.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>Privacy Concerns</h3>
-                    <p>Organizations cannot expose sensitive data to external AI APIs due to privacy and compliance requirements.</p>
-                </div>
-            </div>
+            <div id="problem-content"></div>
         </div>
     </section>
 
@@ -106,38 +65,15 @@
     <section class="section features-section" id="features">
         <div class="container">
             <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>Natural Language Interface</h3>
-                    <p>Ask questions in plain English like "Show customers in Bahrain" or "Count orders per customer"</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>RAG-Enhanced Accuracy</h3>
-                    <p>Retrieval-Augmented Generation ensures accurate SQL queries by leveraging schema context</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
-                    <h3>Schema-Only Access</h3>
-                    <p>LLM accesses only database schema (table/column names), never actual records - ensuring complete data privacy</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🖥️</div>
-                    <h3>100% Local Processing</h3>
-                    <p>No data sent to external APIs; runs entirely on your machine for complete privacy</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3>Session Isolation</h3>
-                    <p>Each user gets isolated vector stores for their schema, ensuring data separation</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Performance Metrics</h3>
-                    <p>Track RAG retrieval, LLM generation, and execution times for transparency</p>
-                </div>
-            </div>
+            <div id="features-content"></div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="section methodology-section">
+        <div class="container">
+            <h2 class="section-title">Methodology & Approach</h2>
+            <div id="methodology-content"></div>
         </div>
     </section>
 
@@ -145,126 +81,7 @@
     <section class="section demo-section">
         <div class="container">
             <h2 class="section-title">See QueryMind in Action</h2>
-            <p class="section-subtitle">Watch how natural language questions are converted to SQL queries in real-time</p>
-            
-            <div class="demo-container">
-                <div class="demo-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Ask Your Question</h3>
-                        <div class="demo-mockup">
-                            <div class="mockup-header">
-                                <div class="mockup-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <span>QueryMind</span>
-                            </div>
-                            <div class="mockup-body">
-                                <div class="mockup-label">Ask your question</div>
-                                <div class="mockup-input">List all customers from Bahrain</div>
-                                <div class="mockup-button">Generate SQL</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="demo-arrow">→</div>
-
-                <div class="demo-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>AI Generates SQL</h3>
-                        <div class="demo-mockup">
-                            <div class="mockup-header">
-                                <div class="mockup-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <span>SQL Query</span>
-                            </div>
-                            <div class="mockup-body mockup-code">
-                                <pre>SELECT * FROM customers 
-WHERE country = 'Bahrain';</pre>
-                                <div class="mockup-timing">
-                                    <span>RAG: 2.45s</span>
-                                    <span>LLM: 28.1s</span>
-                                    <span>Exec: 0.03s</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="demo-arrow">→</div>
-
-                <div class="demo-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>View Results</h3>
-                        <div class="demo-mockup">
-                            <div class="mockup-header">
-                                <div class="mockup-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <span>Results</span>
-                            </div>
-                            <div class="mockup-body">
-                                <table class="mockup-table">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Country</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>101</td>
-                                            <td>Ahmed Ali</td>
-                                            <td>Bahrain</td>
-                                        </tr>
-                                        <tr>
-                                            <td>205</td>
-                                            <td>Sara Khalid</td>
-                                            <td>Bahrain</td>
-                                        </tr>
-                                        <tr>
-                                            <td>312</td>
-                                            <td>Omar Jassim</td>
-                                            <td>Bahrain</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architecture Section -->
-    <section class="section architecture-section">
-        <div class="container">
-            <h2 class="section-title">System Architecture</h2>
-            <div class="architecture-content">
-                <div class="architecture-diagram">
-                    <div class="arch-layer">
-                        <div class="arch-box">User Interface (Flask Web App)</div>
-                    </div>
-                    <div class="arch-arrow">↓</div>
-                    <div class="arch-layer">
-                        <div class="arch-box small">Input Validator</div>
-                        <div class="arch-box small">RAG Retrieval</div>
-                        <div class="arch-box small">SQL Validator</div>
-                    </div>
-                    <div class="arch-arrow">↓</div>
-                    <div class="arch-layer">
-                        <div class="arch-box small">ChromaDB</div>
-                        <div class="arch-box small">Ollama LLM</div>
-                        <div class="arch-box small">MariaDB</div>
-                    </div>
-                </div>
-            </div>
+            <div id="demo-content"></div>
         </div>
     </section>
 
@@ -272,112 +89,23 @@ WHERE country = 'Bahrain';</pre>
     <section class="section results-section">
         <div class="container">
             <h2 class="section-title">Experimental Results</h2>
-            <div class="results-intro">
-                <p>We evaluated QueryMind with different model configurations to find the optimal balance between accuracy and performance. All LLM and embedding models were pulled from <a href="https://ollama.com/search" target="_blank" style="color: #667eea; text-decoration: underline;">Ollama</a>, ensuring consistent local deployment across all configurations.</p>
-            </div>
-            <div class="results-table-wrapper">
-                <table class="results-table">
-                    <thead>
-                        <tr>
-                            <th>Model Configuration</th>
-                            <th>Accuracy</th>
-                            <th>Avg Generation Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="highlight-row">
-                            <td><strong>Llama 3.1:8b + mxbai-embed-large</strong></td>
-                            <td><span class="accuracy-badge best">100%</span></td>
-                            <td>28.97s</td>
-                        </tr>
-                        <tr>
-                            <td>Qwen3:1.7b + mxbai-embed-large</td>
-                            <td><span class="accuracy-badge good">60%</span></td>
-                            <td>6.69s</td>
-                        </tr>
-                        <tr>
-                            <td>Gemma3:1b + mxbai-embed-large</td>
-                            <td><span class="accuracy-badge good">60%</span></td>
-                            <td>5.19s</td>
-                        </tr>
-                        <tr>
-                            <td>Qwen3:1.7b + all-minilm</td>
-                            <td><span class="accuracy-badge good">60%</span></td>
-                            <td>4.52s</td>
-                        </tr>
-                        <tr>
-                            <td>Gemma3:1b + all-minilm</td>
-                            <td><span class="accuracy-badge moderate">40%</span></td>
-                            <td>4.20s</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="results-findings">
-                <h3>Key Findings</h3>
-                <ul>
-                    <li><strong>Larger models</strong> achieve higher accuracy but require more generation time</li>
-                    <li><strong>Smaller models</strong> are faster but less accurate for complex queries</li>
-                    <li><strong>Embedding model quality</strong> impacts retrieval accuracy significantly</li>
-                    <li>All configurations pass security validation tests</li>
-                </ul>
-            </div>
+            <div id="results-content"></div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="section team-section">
+    <!-- Conclusion Section -->
+    <section class="section conclusion-section">
         <div class="container">
-            <h2 class="section-title">Meet Our Team</h2>
-            <p class="team-subtitle">Cybersecurity Graduates - Batch 2025</p>
-            <div class="team-grid">
-                <div class="team-card">
-                    <a href="https://malmaraghi.carrd.co" target="_blank" class="team-link">
-                        <div class="team-avatar">MA</div>
-                        <h3>Mohamed Almaraghi</h3>
-                        <p class="team-role">Lead Developer</p>
-                        <span class="team-cta">View Profile →</span>
-                    </a>
-                </div>
-                <div class="team-card">
-                    <a href="https://alsowaidi.carrd.co" target="_blank" class="team-link">
-                        <div class="team-avatar">AA</div>
-                        <h3>Ali Alsowaidi</h3>
-                        <p class="team-role">LLM Developer</p>
-                        <span class="team-cta">View Profile →</span>
-                    </a>
-                </div>
-                <div class="team-card">
-                    <a href="https://bumeajib.carrd.co" target="_blank" class="team-link">
-                        <div class="team-avatar">AB</div>
-                        <h3>Abdulrahman Bumeajib</h3>
-                        <p class="team-role">Backend Developer</p>
-                        <span class="team-cta">View Profile →</span>
-                    </a>
-                </div>
-            </div>
+            <h2 class="section-title">Conclusion & Future Work</h2>
+            <div id="conclusion-content"></div>
         </div>
     </section>
 
-    <!-- Acknowledgment Section -->
-    <section class="section acknowledgment-section">
+    <!-- About the Project & Team Section -->
+    <section class="section about-section">
         <div class="container">
-            <h2 class="section-title">Acknowledgment</h2>
-            <div class="acknowledgment-content">
-                <div class="acknowledgment-card">
-                    <div class="acknowledgment-icon">🎓</div>
-                    <h3>Dr. Abdulla Aldoseri</h3>
-                    <p class="acknowledgment-title">Project Supervisor</p>
-                    <p class="acknowledgment-text">
-                        We extend our deepest gratitude to Dr. Abdulla Aldoseri for his invaluable guidance, 
-                        continuous support, and mentorship throughout this project. His expertise in artificial 
-                        intelligence and cybersecurity provided crucial direction that helped us navigate complex 
-                        technical challenges. Dr. Aldoseri's dedication to our success and his insightful feedback 
-                        were instrumental in shaping QueryMind into a robust and secure system. We are truly 
-                        grateful for his commitment to our academic and professional growth.
-                    </p>
-                </div>
-            </div>
+            <h2 class="section-title">About the Project & Team</h2>
+            <div id="about-content"></div>
         </div>
     </section>
 
@@ -395,43 +123,43 @@ WHERE country = 'Bahrain';</pre>
                     <a href="resources#github">GitHub</a>
                     <a href="resources#poster">Poster</a>
                     <a href="resources#demo">Demo Video</a>
+                    <a href="resources#ollama">Ollama</a>
+                    <a href="resources#mysql">MySQL</a>
                 </div>
                 <div class="footer-contact">
                     <a href="mailto:info@querymind-text2sql.com">info@querymind-text2sql.com</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 QueryMind - <a href="https://www.uob.edu.bh/" target="_blank" class="uob-link">University of Bahrain</a> Senior Project</p>
+                <p>&copy; 2025 QueryMind | Final Year Project - Semester 1 (2025/2026) | <a href="https://www.uob.edu.bh/" target="_blank" class="uob-link">College of IT, University of Bahrain</a></p>
             </div>
         </div>
     </footer>
 
+    <script src="js/sections-loader.js"></script>
     <script>
-        // Welcome modal functionality
-        const modal = document.getElementById('welcomeModal');
-        const hasVisited = localStorage.getItem('querymindVisited');
-
-        if (!hasVisited) {
-            modal.style.display = 'flex';
-        }
-
-        function closeModal() {
-            modal.style.display = 'none';
-            localStorage.setItem('querymindVisited', 'true');
-        }
-
-        // Close modal if user clicks outside
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-
         // Smooth scroll to top
-        document.querySelector('.scroll-to-top')?.addEventListener('click', function(e) {
+        const upButton = document.querySelector('.scroll-to-top');
+        
+        upButton?.addEventListener('click', function(e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Show/hide up button on scroll
+        window.addEventListener('scroll', function() {
+            if (upButton) {
+                if (window.scrollY > 300) {
+                    upButton.classList.add('show');
+                } else {
+                    upButton.classList.remove('show');
+                }
+            }
+        });
     </script>
+    <script src="js/hero-animation.js"></script>
+    <script src="js/sections-animation.js"></script>
+    <script src="js/objectives-animation.js"></script>
+    <script src="js/demo-animation.js"></script>
 </body>
 </html>

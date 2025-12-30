@@ -21,7 +21,7 @@ class SectionAnimations {
             { id: 'abstract-content-inner', type: 'grid', itemSelector: 'p', delay: 400 },
             { id: 'problem-grid', type: 'grid', itemSelector: '.problem-card', delay: 300 },
             { id: 'features-grid', type: 'grid', itemSelector: '.feature-card', delay: 200 },
-            { id: 'methodology-grid', type: 'grid', itemSelector: '.methodology-section', delay: 400 },
+            { id: 'methodology-grid', type: 'grid', itemSelector: '.methodology-section', delay: 200 },
             { id: 'graph-container', type: 'single', delay: 0 },
             { id: 'results-table', type: 'single', delay: 0 },
             { id: 'results-findings', type: 'single', delay: 0 },

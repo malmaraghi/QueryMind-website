@@ -99,7 +99,7 @@ WHERE t.sector = 'IT'
         
         // Step 1: Show first box
         await this.animateElement('#demo-step-1');
-        await this.sleep(1500);
+        await this.sleep(600);
 
         // Step 2: Show first arrow
         await this.animateElement('#demo-arrow-1');

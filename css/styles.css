@@ -260,7 +260,7 @@ html {
 }
 
 .hero-title {
-    font-size: 2.2em;
+    font-size: 1.9em;
     font-weight: 700;
     color: var(--accent);
     margin: 0.4em 0 0.3em 0;
@@ -270,11 +270,12 @@ html {
 }
 
 .hero-subtitle {
-    font-size: 1.4em;
-    color: #fff;
-    margin: 1em 0 0 0;
-    font-weight: 500;
+    font-size: 1.2em;
+    color: var(--text-soft);
+    margin: 0.8em 0 0 0;
+    font-weight: 400;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
 .hero-description {
@@ -413,7 +414,7 @@ html {
 
 .feature-card {
     background: rgba(66, 35, 106, 0.6);
-    padding: 2em;
+    padding: 1em 2em 2em 2em;
     border-radius: 20px;
     border: 1px solid rgba(187, 35, 254, 0.2);
     transition: all 0.3s ease;
@@ -428,7 +429,7 @@ html {
 
 .feature-icon {
     font-size: 3em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
     display: block;
 }
 
@@ -1287,7 +1288,7 @@ html {
 }
 
 .conclusion-impact p {
-    color: #fff;
+    color: var(--text-soft);
     font-size: 1.1em;
     line-height: 1.8;
     margin: 0;
@@ -1410,7 +1411,7 @@ html {
     align-items: center;
     gap: 0.6em;
     font-size: 0.95em;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .contact-icon {
@@ -1426,7 +1427,7 @@ html {
     text-decoration: none;
     transition: all 0.2s ease;
     font-size: 0.95em;
-    text-align: left;
+    text-align: center;
 }
 
 .team-contact-item a:hover {
@@ -1623,7 +1624,7 @@ html {
 /* Footer */
 .footer {
     background: var(--card-bg);
-    padding: 3em 0 1.5em 0;
+    padding: 2em 0 1em 0;
     border-top: 2px solid rgba(187, 35, 254, 0.3);
 }
 
@@ -1637,7 +1638,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     flex-wrap: wrap;
     gap: 2em;
 }
@@ -2113,6 +2114,72 @@ html {
     background: rgba(187, 35, 254, 0.1);
 }
 
+/* Validation Checks Styles */
+.validation-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+.validation-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    padding: 0.8em 1em;
+    background: rgba(0, 255, 136, 0.05);
+    border-left: 3px solid #00FF88;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+}
+
+.validation-item.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.validation-icon {
+    font-size: 1.3em;
+    color: #00FF88;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.validation-text {
+    color: var(--text-color);
+    font-size: 0.95em;
+}
+
+.validation-status {
+    text-align: center;
+    padding: 1em;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.validation-status.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.8em 1.8em;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.safe {
+    background: linear-gradient(135deg, #00FF88 0%, #00CC6F 100%);
+    color: #0A0A0A;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+}
+
 /* Resources Page Styles */
 .resources-hero {
     background: var(--gradient-purple);
@@ -2586,44 +2653,84 @@ html {
     .resource-card,
     .problem-card,
     .feature-card {
-        padding: 2em 1.5em;
+        padding: 1.2em 1.5em 2em 1.5em;
+    }
+
+    .feature-icon {
+        font-size: 2.5em;
+        margin-bottom: 0.2em;
+    }
+
+    .feature-card h3 {
+        font-size: 1.2em;
+        margin: 0.3em 0 0.5em 0;
     }
 
     .team-card {
         padding: 1.8em 1.5em;
     }
 
+    /* Reduce text size for all section content on mobile */
+    .conclusion-summary p {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .abstract-content p {
+        font-size: 0.98em;
+        line-height: 1.6;
+    }
+
+    .objective-item p {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .problem-card p {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .feature-card p {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
     .team-avatar {
-        width: 80px;
-        height: 80px;
-        font-size: 1.6em;
-        margin-bottom: 1em;
+        width: 65px;
+        height: 65px;
+        font-size: 1.3em;
+        margin-bottom: 0.4em;
     }
 
     .team-card h3 {
-        font-size: 1.15em;
-        margin: 0.3em 0;
+        font-size: 1.1em;
+        margin: 0.15em 0;
     }
 
     .team-role {
         font-size: 0.9em;
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
     }
 
     .team-contact {
-        gap: 0.5em;
-        margin-top: 0.8em;
+        gap: 0.3em;
+        margin-top: 0.4em;
     }
 
     .team-contact-item {
         font-size: 0.85em;
-        gap: 0.5em;
+        gap: 0.45em;
     }
 
     .contact-icon {
         width: 16px;
         height: 16px;
         min-width: 16px;
+    }
+
+    .supervisor-section {
+        margin-top: 2em;
     }
 
     .supervisor-card {
@@ -2833,6 +2940,24 @@ html {
         word-wrap: break-word;
     }
 
+    .validation-checks {
+        gap: 0.8em;
+    }
+
+    .validation-item {
+        padding: 0.7em 0.9em;
+        gap: 0.6em;
+    }
+
+    .validation-text {
+        font-size: 0.9em;
+    }
+
+    .status-badge {
+        padding: 0.7em 1.5em;
+        font-size: 0.9em;
+    }
+
     .section-subtitle {
         font-size: 1em;
         margin-bottom: 2em;
@@ -2892,7 +3017,16 @@ html {
         font-size: 0.75em;
         padding: 0.4em 0.8em;
         white-space: normal;
-        max-width: 150px;
+        max-width: 140px;
+    }
+
+    /* Show green dot label below instead of above */
+    .graph-point[style*="88%"] .point-label {
+        bottom: auto;
+        top: 25px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
     }
 
     .graph-x-axis {
@@ -3244,5 +3378,35 @@ html {
 
     .demo-arrow {
         font-size: 2.5em;
+    }
+
+    /* Footer mobile adjustments */
+    .footer {
+        padding: 1.5em 0 1em 0;
+    }
+
+    .footer-content-simple {
+        margin-bottom: 1em;
+        gap: 1em;
+        justify-content: center;
+    }
+
+    .footer-links-row {
+        gap: 0.5em;
+        justify-content: center;
+    }
+
+    .footer-links-row a {
+        font-size: 0.8em;
+        padding: 0.4em 0.7em;
+    }
+
+    .footer-contact {
+        margin-top: 0.5em;
+        text-align: center;
+    }
+
+    .footer-contact a {
+        font-size: 0.95em;
     }
 }

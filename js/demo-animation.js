@@ -97,35 +97,47 @@ WHERE t.sector = 'IT'
     async runSequence() {
         console.log('Starting animation sequence');
         
-        // Step 1: Show first box
+        // Step 1: Show first box (Ask Question)
         await this.animateElement('#demo-step-1');
-        await this.sleep(600);
+        await this.sleep(300);
 
-        // Step 2: Show first arrow
+        // Show first arrow
         await this.animateElement('#demo-arrow-1');
-        await this.sleep(800);
+        await this.sleep(400);
 
-        // Step 3: Show second box
+        // Step 2: Show validation step
         await this.animateElement('#demo-step-2');
-        await this.sleep(800);
+        await this.sleep(200);
+        
+        // Animate validation checks
+        await this.animateValidation();
+        await this.sleep(400);
 
-        // Step 4: Type SQL code
+        // Show second arrow
+        await this.animateElement('#demo-arrow-2');
+        await this.sleep(400);
+
+        // Step 3: Show SQL generation box
+        await this.animateElement('#demo-step-3');
+        await this.sleep(400);
+
+        // Type SQL code
         await this.typeSQL();
+        await this.sleep(300);
+
+        // Animate timing badges
+        await this.animateTimings();
         await this.sleep(500);
 
-        // Step 5: Animate timing badges
-        await this.animateTimings();
-        await this.sleep(1000);
+        // Show third arrow
+        await this.animateElement('#demo-arrow-3');
+        await this.sleep(400);
 
-        // Step 6: Show second arrow
-        await this.animateElement('#demo-arrow-2');
-        await this.sleep(800);
+        // Step 4: Show results box
+        await this.animateElement('#demo-step-4');
+        await this.sleep(300);
 
-        // Step 7: Show third box
-        await this.animateElement('#demo-step-3');
-        await this.sleep(600);
-
-        // Step 8: Show results one by one
+        // Show results one by one
         await this.animateResults();
     }
 
@@ -196,6 +208,23 @@ WHERE t.sector = 'IT'
         for (let row of rows) {
             row.classList.add('animate-in');
             await this.sleep(300);
+        }
+    }
+
+    async animateValidation() {
+        console.log('Animating validation checks');
+        const validationItems = document.querySelectorAll('.validation-item');
+        
+        for (let item of validationItems) {
+            item.classList.add('animate-in');
+            await this.sleep(200);
+        }
+        
+        await this.sleep(200);
+        
+        const validationStatus = document.getElementById('validation-status');
+        if (validationStatus) {
+            validationStatus.classList.add('animate-in');
         }
     }
 

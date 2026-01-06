@@ -1,6 +1,7 @@
 // Demo Animation Controller
 class DemoAnimation {
     constructor() {
+        this.questionText = "List all employees who completed Tamkeen training programs in the IT sector";
         this.sqlCode = `SELECT e.employee_name, e.company,
        t.program_name, t.completion_date
 FROM employees e
@@ -76,6 +77,13 @@ WHERE t.sector = 'IT'
             el.classList.remove('animate-in');
         });
 
+        // Reset question text
+        const questionText = document.getElementById('question-text');
+        if (questionText) {
+            questionText.textContent = '';
+            questionText.classList.remove('typewriter-cursor');
+        }
+
         // Reset SQL code
         const sqlText = document.getElementById('sql-text');
         if (sqlText) {
@@ -100,6 +108,10 @@ WHERE t.sector = 'IT'
         // Step 1: Show first box (Ask Question)
         await this.animateElement('#demo-step-1');
         await this.sleep(300);
+
+        // Type the question
+        await this.typeQuestion();
+        await this.sleep(500);
 
         // Show first arrow
         await this.animateElement('#demo-arrow-1');
@@ -149,6 +161,24 @@ WHERE t.sector = 'IT'
         } else {
             console.warn('Element not found:', selector);
         }
+    }
+
+    async typeQuestion() {
+        const questionText = document.getElementById('question-text');
+        if (!questionText) {
+            console.error('Question text element not found');
+            return;
+        }
+
+        console.log('Typing question');
+        questionText.classList.add('typewriter-cursor');
+        
+        for (let i = 0; i < this.questionText.length; i++) {
+            questionText.textContent += this.questionText[i];
+            await this.sleep(30); // Typing speed
+        }
+        
+        questionText.classList.remove('typewriter-cursor');
     }
 
     async typeSQL() {

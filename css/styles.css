@@ -165,8 +165,8 @@ html {
 }
 
 .uob-logo {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
     filter: brightness(1.1);
     flex-shrink: 0;
@@ -732,7 +732,7 @@ html {
 .objective-item {
     display: flex;
     gap: 1.5em;
-    align-items: flex-start;
+    align-items: center;
     background: var(--card-bg);
     padding: 1.8em 2em;
     border-radius: 16px;
@@ -1349,7 +1349,7 @@ html {
 
 .team-card {
     background: var(--card-bg);
-    padding: 2.5em 2em;
+    padding: 1.8em 1.5em;
     border-radius: var(--card-radius);
     text-align: center;
     border: 2px solid rgba(187, 35, 254, 0.2);
@@ -1371,15 +1371,15 @@ html {
 }
 
 .team-avatar {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background: var(--gradient-purple);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.5em;
-    font-size: 2em;
+    margin: 0 auto 1em;
+    font-size: 1.8em;
     font-weight: 700;
     color: #fff;
     border: 3px solid var(--accent);
@@ -1388,22 +1388,22 @@ html {
 
 .team-card h3 {
     color: #fff;
-    font-size: 1.3em;
-    margin: 0.5em 0;
+    font-size: 1.2em;
+    margin: 0.4em 0;
 }
 
 .team-role {
     color: var(--text-soft);
-    font-size: 1em;
-    margin-bottom: 1.5em;
+    font-size: 0.95em;
+    margin-bottom: 1em;
 }
 
 .team-contact {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.6em;
-    margin-top: 1em;
+    gap: 0.5em;
+    margin-top: 0.8em;
 }
 
 .team-contact-item {
@@ -1558,8 +1558,8 @@ html {
 }
 
 .team-avatar-img {
-    width: 120px;
-    height: 120px;
+    width: 115px;
+    height: 115px;
     border-radius: 50%;
     margin: 0 auto 1.5em;
     border: 4px solid var(--accent);
@@ -1570,7 +1570,7 @@ html {
 }
 
 .team-link:hover .team-avatar-img {
-    transform: scale(1.05);
+    transform: scale(1.02);
     border-color: var(--secondary-accent);
     box-shadow: 0 6px 30px rgba(187, 35, 254, 0.5);
 }
@@ -1677,6 +1677,9 @@ html {
     font-size: 1.1em;
     font-weight: 700;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .footer-contact a:hover {
@@ -2543,8 +2546,8 @@ html {
     }
 
    .uob-logo {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     order: 2;
     flex-shrink: 0;
     margin-left: auto;
@@ -2578,12 +2581,12 @@ html {
     }
 
     .hero-title {
-        font-size: 1.8em;
+        font-size: 1.5em;
         line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     .hero-description {
@@ -3132,8 +3135,8 @@ html {
     }
 
     .uob-logo {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
     }
 
     .university-name {
@@ -3178,13 +3181,13 @@ html {
     }
 
     .hero-title {
-        font-size: 1.6em;
+        font-size: 1.3em;
         letter-spacing: 0.5px;
         line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 1.1em;
+        font-size: 0.95em;
     }
 
     .resources-title {
@@ -3409,4 +3412,20 @@ html {
     .footer-contact a {
         font-size: 0.95em;
     }
+}
+
+.email-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.email-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    display: block;
 }

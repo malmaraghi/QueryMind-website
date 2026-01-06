@@ -17,7 +17,7 @@
                 <div class="academic-info">
                     <h3 class="university-name">University of Bahrain</h3>
                     <p class="college-name">College of Information Technology</p>
-                    <p class="department-name">Department of Cybersecurity</p>
+                    <p class="department-name">Department of Information Systems</p>
                 </div>
             </div>
         </div>
@@ -137,13 +137,24 @@
         <div class="container">
             <div class="footer-content-simple" style="justify-content: center;">
                 <div class="footer-contact" style="text-align: center; margin: 0;">
-                    <a href="mailto:info@querymind-text2sql.com" style="font-size: 1.3em;">Contact us</a>
+                    <a href="mailto:info@querymind-text2sql.com" style="font-size: 1.3em;">
+                        <span class="email-icon" style="width: 24px; height: 24px;">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </span>
+                        Contact us
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 QueryMind | Final Year Project - Semester 1 (2025/2026) | <a href="https://www.uob.edu.bh/" target="_blank" class="uob-link">College of IT, University of Bahrain</a></p>
+                <p>&copy; <span id="current-year"></span> QueryMind | Final Year Project - Semester 1 (2025/2026) | <a href="https://www.uob.edu.bh/" target="_blank" class="uob-link">College of IT, University of Bahrain</a></p>
             </div>
         </div>
     </footer>
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

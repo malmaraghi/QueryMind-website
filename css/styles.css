@@ -587,6 +587,8 @@ html {
     content: '→';
     position: absolute;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--accent);
     font-weight: bold;
     font-size: 1.2em;
@@ -2837,6 +2839,11 @@ html {
         overflow-x: hidden;
     }
 
+    .approach-list li::before {
+        top: 0.5em;
+        transform: none;
+    }
+
     .dataset-info {
         overflow-x: hidden;
     }
@@ -3257,14 +3264,14 @@ html {
     }
 
     .abstract-content {
-        padding: 2em 1.5em;
+        padding: 1.5em 1em;
         text-align: left;
     }
 
     .abstract-content p {
-        font-size: 1.05em;
-        line-height: 1.6;
-        margin: 1.2em 0;
+        font-size: 0.9em;
+        line-height: 1.5;
+        margin: 1em 0;
         text-align: left;
         word-spacing: normal;
         letter-spacing: normal;

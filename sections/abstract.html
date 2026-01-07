@@ -1,22 +1,18 @@
 <div class="abstract-content" id="abstract-content-inner">
     <p data-index="0">
-        Businesses require natural-language access to databases without exposing records to large language models, 
-        as this compromises data confidentiality and conflicts with governance mandates. This research paper introduces 
-        QueryMind, a system that resolves this issue by transforming natural-language enquiries into 
-        secure SQL through a schema-aware Retrieval-Augmented Generation (RAG) pipeline featuring SELECT-only validation.
-    </p>
-    <p data-index="1">
-        We tested the system on an e-commerce database with five different model configurations. The best setup, 
-        llama3.1-8b with mxbai-embed-large, achieved 100% accuracy 
-        across all benchmark queries. The entire pipeline averaged 33 seconds per query, with 86% of that time dedicated 
-        to LLM generation. The smaller models gave answers faster, in an average of 4 to 7 seconds, but they were only 
-        40 to 60 percent accurate.
-    </p>
-    <p data-index="2">
-        Security tests in five different situations indicated that the system could withstand SQL injection, 
-        XSS, and session-hijacking attacks. The performance of local and remote databases 
-        was almost the same, with only a 7% difference in total processing times. The results show that bigger LLMs take 
-        longer to process, but they make SQL generation more accurate and safer. They also show that a fully local, 
-        schema-restricted setup is reliable and keeps data private.
+        Businesses require natural-language access to databases without exposing records to large 
+        language models, as this compromises data confidentiality and conflicts with governance 
+        mandates. This research paper introduces QueryMind, a system that resolves this issue by 
+        transforming natural-language enquiries into secure SQL through a schema-aware retrieval-augmented generation pipeline featuring SELECT-only validation. We tested the system on 
+        an e-commerce database with five different model configurations. The best setup, llama3.1-8b 
+        with mxbai-embed-large, achieved 100% accuracy across all benchmark queries. The entire 
+        pipeline averaged 33 seconds per query, with 86% of that time dedicated to LLM generation. 
+        The smaller models gave answers faster, in an average of 4 to 7 seconds, but they were only 
+        40 to 60 percent accurate. Security tests in five different situations indicated that the system 
+        could withstand SQL injection, XSS, and session-hijacking attacks. The performance of local 
+        and remote databases was almost the same, with only a 7% difference in total processing 
+        times. The results show that bigger LLMs take longer to process, but they make SQL 
+        generation more accurate and safer. They also show that a fully local, schema-restricted setup 
+        is reliable and keeps data private.
     </p>
 </div>

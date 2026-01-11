@@ -99,7 +99,7 @@ WHERE t.sector = 'IT'
         });
 
         this.currentCharIndex = 0;
-        await this.sleep(500);
+        await this.sleep(200);
     }
 
     async runSequence() {
@@ -107,47 +107,47 @@ WHERE t.sector = 'IT'
         
         // Step 1: Show first box (Ask Question)
         await this.animateElement('#demo-step-1');
-        await this.sleep(300);
+        await this.sleep(150);
 
         // Type the question
         await this.typeQuestion();
-        await this.sleep(500);
+        await this.sleep(250);
 
         // Show first arrow
         await this.animateElement('#demo-arrow-1');
-        await this.sleep(400);
+        await this.sleep(200);
 
         // Step 2: Show validation step
         await this.animateElement('#demo-step-2');
-        await this.sleep(200);
+        await this.sleep(100);
         
         // Animate validation checks
         await this.animateValidation();
-        await this.sleep(400);
+        await this.sleep(200);
 
         // Show second arrow
         await this.animateElement('#demo-arrow-2');
-        await this.sleep(400);
+        await this.sleep(200);
 
         // Step 3: Show SQL generation box
         await this.animateElement('#demo-step-3');
-        await this.sleep(400);
+        await this.sleep(200);
 
         // Type SQL code
         await this.typeSQL();
-        await this.sleep(300);
+        await this.sleep(150);
 
         // Animate timing badges
         await this.animateTimings();
-        await this.sleep(500);
+        await this.sleep(250);
 
         // Show third arrow
         await this.animateElement('#demo-arrow-3');
-        await this.sleep(400);
+        await this.sleep(200);
 
         // Step 4: Show results box
         await this.animateElement('#demo-step-4');
-        await this.sleep(300);
+        await this.sleep(150);
 
         // Show results one by one
         await this.animateResults();
@@ -175,7 +175,7 @@ WHERE t.sector = 'IT'
         
         for (let i = 0; i < this.questionText.length; i++) {
             questionText.textContent += this.questionText[i];
-            await this.sleep(30); // Typing speed
+            await this.sleep(15); // Typing speed
         }
         
         questionText.classList.remove('typewriter-cursor');
@@ -193,7 +193,7 @@ WHERE t.sector = 'IT'
         
         for (let i = 0; i < this.sqlCode.length; i++) {
             sqlText.textContent += this.sqlCode[i];
-            await this.sleep(15); // Typing speed
+            await this.sleep(8); // Typing speed
         }
         
         sqlText.classList.remove('typewriter-cursor');
@@ -207,7 +207,7 @@ WHERE t.sector = 'IT'
         }
 
         console.log('Animating timings');
-        const durations = [800, 1200, 400]; // Different durations for each timing
+        const durations = [400, 600, 200]; // Different durations for each timing
         
         timingElements.forEach((el, index) => {
             const target = parseFloat(el.dataset.target);
@@ -228,7 +228,7 @@ WHERE t.sector = 'IT'
             }, stepDuration);
         });
 
-        await this.sleep(1500);
+        await this.sleep(750);
     }
 
     async animateResults() {
@@ -237,7 +237,7 @@ WHERE t.sector = 'IT'
         
         for (let row of rows) {
             row.classList.add('animate-in');
-            await this.sleep(300);
+            await this.sleep(150);
         }
     }
 
@@ -247,10 +247,10 @@ WHERE t.sector = 'IT'
         
         for (let item of validationItems) {
             item.classList.add('animate-in');
-            await this.sleep(200);
+            await this.sleep(100);
         }
         
-        await this.sleep(200);
+        await this.sleep(100);
         
         const validationStatus = document.getElementById('validation-status');
         if (validationStatus) {

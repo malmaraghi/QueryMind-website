@@ -303,7 +303,14 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.6em;
     min-height: 48px;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5;
 }
 
 .btn-primary {
@@ -337,6 +344,34 @@ html {
 .btn-secondary:active {
     transform: translateY(-1px);
     background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-tertiary {
+    padding: 1.1em 2.8em;
+    border-radius: 14px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: 48px;
+    background: transparent;
+    color: var(--secondary-accent);
+    border: 2px solid var(--secondary-accent);
+}
+
+.btn-tertiary:hover {
+    background: rgba(35, 193, 237, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(35, 193, 237, 0.3);
+}
+
+.btn-tertiary:active {
+    transform: translateY(-1px);
+    background: rgba(35, 193, 237, 0.2);
 }
 
 /* Section Styles */
@@ -1645,6 +1680,16 @@ html {
     gap: 2em;
 }
 
+/* Center footer content on resources page */
+.resources-page .footer-content-simple {
+    justify-content: center;
+    text-align: center;
+}
+
+.resources-page .footer-links-row {
+    justify-content: center;
+}
+
 .footer-links-row {
     display: flex;
     gap: 2em;
@@ -2296,6 +2341,65 @@ html {
     transform: translateY(-3px);
 }
 
+/* Back to Home Button (Mobile Only) */
+.back-home-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    background: rgba(35, 193, 237, 0.95);
+    border: 2px solid rgba(35, 193, 237, 0.5);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(35, 193, 237, 0.4);
+}
+
+.back-home-mobile {
+    display: inline-flex;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.back-home-mobile.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-home-button:hover {
+    background: rgba(35, 193, 237, 1);
+    border-color: var(--secondary-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(35, 193, 237, 0.6);
+}
+
+.back-arrow-icon {
+    font-size: 1.6em;
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    -webkit-text-stroke: 0.5px currentColor;
+    text-shadow: 0 0 1px currentColor;
+}
+
+.back-home-button:hover .back-arrow-icon {
+    transform: translateX(-3px);
+}
+
+/* Hide back-home button on desktop */
+@media (min-width: 769px) {
+    .back-home-mobile {
+        display: none !important;
+    }
+}
+
 .back-arrow {
     font-size: 1.3em;
     font-weight: 700;
@@ -2602,7 +2706,7 @@ html {
         width: 100%;
     }
 
-    .btn-primary, .btn-secondary {
+    .btn-primary, .btn-secondary, .btn-tertiary {
         width: 100%;
         max-width: 400px;
         padding: 1.2em 2em;
@@ -3264,17 +3368,17 @@ html {
     }
 
     .abstract-content {
-        padding: 1.5em 1em;
+        padding: 1.8em 1.2em;
         text-align: left;
     }
 
     .abstract-content p {
-        font-size: 0.9em;
-        line-height: 1.5;
-        margin: 1em 0;
+        font-size: 0.95em;
+        line-height: 1.75;
+        margin: 1.5em 0;
         text-align: left;
         word-spacing: normal;
-        letter-spacing: normal;
+        letter-spacing: 0.01em;
     }
 
     .acknowledgment-card {
@@ -3392,11 +3496,11 @@ html {
 
     /* Footer mobile adjustments */
     .footer {
-        padding: 1.5em 0 1em 0;
+        padding: 1em 0 0.8em 0;
     }
 
     .footer-content-simple {
-        margin-bottom: 1em;
+        margin-bottom: 0.8em;
         gap: 1em;
         justify-content: center;
     }

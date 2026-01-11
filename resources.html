@@ -135,16 +135,10 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content-simple" style="justify-content: center;">
-                <div class="footer-contact" style="text-align: center; margin: 0;">
-                    <a href="mailto:info@querymind-text2sql.com" style="font-size: 1.3em;">
-                        <span class="email-icon" style="width: 24px; height: 24px;">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                        </span>
-                        Contact us
-                    </a>
+            <div class="footer-content-simple">
+                <div class="footer-links-row">
+                    <a href="/#about">Authors</a>
+                    <a href="mailto:info@querymind-text2sql.com">Contact us</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -152,9 +146,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Back to Home Button for Mobile -->
+    <a href="/" class="back-home-button back-home-mobile">
+        <span class="back-arrow-icon">←</span>
+    </a>
+
     <script>
         // Set current year
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Show/hide back to home button on scroll
+        const backButton = document.querySelector('.back-home-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (backButton) {
+                if (window.scrollY > 300) {
+                    backButton.classList.add('show');
+                } else {
+                    backButton.classList.remove('show');
+                }
+            }
+        });
     </script>
 </body>
 </html>
